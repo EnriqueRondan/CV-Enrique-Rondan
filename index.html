@@ -133,44 +133,26 @@
           <p align="center"><img src="img/G7B.PNG" alt=""></p>
           <p align="center"><img src="img/G8B.PNG" alt=""></p>
           <p align="center"><img src="img/G9B.PNG" alt=""></p>
-          <p class="mb-5"> Tras visualizar la mayoría de las variables se ve que la gran mayoría de los flows son de tipo UDP. En el caso de la variable <i>direction</i> tenemos que hay casi tantas subidas como bajadas de información. En la variable <i>lan_l4_port</i> se ve que el segundo puerto local que más aparece es el 53, correspondiente al servidor DNS. El primero es el 443, correspondiente al https. Por último, en la variable wan_l4_port de nuevo vemos uno de los datos más relevantes tras explorar todas las variables, y es que el puerto que más aparece en todo el set de datos es el 53, lo que indica que probablemente dentro de esta ventana de tiempo, cuando fueron recopilados lo datos, hubo un ataque al servidor DNS. Ya que este dato indica que hubo peticiones masivas a dicho servidor. Lo que hay que definir es cuándo fue. </p>
+          <p class="mb-5"> Tras visualizar la mayoría de las variables se ve que la gran mayoría de los flows son de tipo UDP. En el caso de la variable <i>direction</i> tenemos que hay casi tantas subidas como bajadas de información. En la variable <i>lan_l4_port</i> se ve que el segundo puerto local que más aparece es el 53, correspondiente al servidor DNS. El primero es el 443, correspondiente al https. Por último, en la variable <i>wan_l4_port</i> de nuevo vemos uno de los datos más relevantes tras explorar todas las variables, y es que el puerto que más aparece en todo el set de datos es el 53, lo que indica que probablemente dentro de esta ventana de tiempo, cuando fueron recopilados lo datos, hubo un ataque al servidor DNS. Ya que este dato indica que hubo peticiones masivas a dicho servidor. Lo que hay que definir es cuándo fue. </p>
         </div>
 
       </section>
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="education">
         <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">University of Colorado Boulder</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science - Web Development Track</div>
-              <p>GPA: 3.23</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2006 - May 2010</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row">
-            <div class="resume-content mr-auto">
-              <h3 class="mb-0">James Buchanan High School</h3>
-              <div class="subheading mb-3">Technology Magnet Program</div>
-              <p>GPA: 3.56</p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2002 - May 2006</span>
-            </div>
-          </div>
-
+          <h2 class="mb-0">Transformación de los datos</h2>
+          <p class="mb-5"> Se ha realizado una exploración de los datos, viendo los distintos valores que toman y en qué frecuencia, cada variable. A partir de ahora se trabajará con un set de datos generado a través de la transformación de las variables que ya tenemos, agrupándolas por minutos de forma que obtengamos una serie temporal por cada variable. Además se crearán nuevas variables a partir de valores concretos de algunas de las variables más interesantes para la detección del ataque DDoS al servidor DNS.  </p>
+          <p align="center"><img src="img/G10.png" alt=""></p>
+          <p align="center"><img src="img/G11.png" alt=""></p>
+          <p align="center"><img src="img/G12.png" alt=""></p>
+          <p align="center"><img src="img/G13.png" alt=""></p>
+          <p align="center"><img src="img/G14.png" alt=""></p>
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
-          <h2 class="mb-5">Skills</h2>
+          <h2 class="mb-5">Aproximación 1: Kmeans</h2>
 
           <div class="subheading mb-3">Programming Languages &amp; Tools</div>
           <ul class="list-inline list-icons">
