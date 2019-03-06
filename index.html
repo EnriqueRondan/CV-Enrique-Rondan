@@ -133,6 +133,7 @@
           <p align="center"><img src="img/G7B.PNG" alt=""></p>
           <p align="center"><img src="img/G8B.PNG" alt=""></p>
           <p align="center"><img src="img/G9B.PNG" alt=""></p>
+          <p class="mb-5"> Tras visualizar la mayoría de las variables se ve que la gran mayoría de los flows son de tipo UDP. En el caso de la variable <i>direction</i> tenemos que hay casi tantas subidas como bajadas de información. En la variable <i>lan_l4_port</i> se ve que el segundo puerto local que más aparece es el 53, correspondiente al servidor DNS. El primero es el 443, correspondiente al https. Por último, en la variable wan_l4_port de nuevo vemos uno de los datos más relevantes tras explorar todas las variables, y es que el puerto que más aparece en todo el set de datos es el 53, lo que indica que probablemente dentro de esta ventana de tiempo, cuando fueron recopilados lo datos, hubo un ataque al servidor DNS. Ya que este dato indica que hubo peticiones masivas a dicho servidor. Lo que hay que definir es cuándo fue. </p>
         </div>
 
       </section>
