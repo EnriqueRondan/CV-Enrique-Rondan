@@ -157,59 +157,13 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
         <div class="my-auto">
           <h2 class="mb-5">Aproximación 1: Kmeans</h2>
-
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-html5"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-css3"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-sass"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-less"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-wordpress"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-grunt"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-gulp"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"></i>
-            </li>
-          </ul>
-
-          <div class="subheading mb-3">Workflow</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
+          <p class="mb-5"> La idea inicial es poder identificar el ataque DNS de forma aislada usando todo el dataset transformado. El único hiper-parámetro del algortimo kmeans que variaremos será n_clusters para poder usar una configuración que detecte al ataque de forma aislada. Otra cosa que se tendrá en cuenta será hacer una clusterización con los datos escalados para comprobar si hay o no diferencia con los resultados de los datos sin escalar. Ya que el algoritmo calcula distancias entre puntos, a priori tiene sentido y deberá dar resultados distintos. Se empiezo primero con datos sin escalar.  <p>
+          <p align="center"><img src="img/G18.png" alt=""></p>
+          <p class="mb-5"> Con los datos sin escalar, se aplican modelos de kmeans desde 2 clusters hasta 12, sin conseguir que ninguno de ellos aisle el ataque en uno de los clusters. Se pasa a aplicarse modelos kmeans sobre el set de datos escalado. <p>
+          <p align="center"><img src="img/G19.png" alt=""></p>
+          <p class="mb-5"> Con los datos escalados vemos que el algortimo logra aislar el ataque en uno de los clusters, usando 11 clusters. Se prueba ahora con un set de datos mas reducido de cara a simplificar el problema y la complejidad del algoritmo. A ver si de este modo el algortimo necesitan menos clusters para aislar el ataque.<p>
+          <p align="center"><img src="img/G23.png" alt=""></p>
+          <p class="mb-5"> Se ve que con un set de datos escalado y mas reducido se consigue aislar el ataque con 3 cliusters. <p>
         </div>
       </section>
 
