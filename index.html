@@ -155,35 +155,18 @@
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
         <div class="my-auto">
           <h2 class="mb-5">Conclusiones</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Google Analytics Certified Developer</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              Mobile Web Specialist - Google Certification</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2009</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - University of Colorado Boulder - Adobe Creative Jam 2008 (UI Design Category)</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              2<sup>nd</sup>
-              Place - University of Colorado Boulder - Emerging Tech Competition 2008</li>
-            <li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              1<sup>st</sup>
-              Place - James Buchanan High School - Hackathon 2006</li>
-            <li>
-              <i class="fa-li fa fa-trophy text-warning"></i>
-              3<sup>rd</sup>
-              Place - James Buchanan High School - Hackathon 2005</li>
-          </ul>
+          <p class="mb-5"> En cuanto a la naturaleza del problema, y dados los datos que tenemos disponibles para abordar esta tipologia de problemas, se hace de vital importancia el cálculo de algunas variables nuevas a partir de las ya existentes para poder tener una visión más 'real' de la red. Estas variables son las del número de flows en la red por minutos, que mostrarán picos donde haya situaciones críticas como el ataque DDoS. Así mismo, es importante cardinalizar las IP, es decir la cantidad de IP distintas que hay en la red en cada minuto, ya que, de nuevo, en momentos de ataques DDoS este valor se dispara. También es de vital importancia la variable que muestra la cantidad de instancias que van dirigidas al puerto 53, que mostrarán el ataque DNS. 
+
+Otras también importantes, aunque a priori no lo parecían, son las relacionadas con las variables direction-downstream y las del protocolo TCP de transporte, ya que en el momento de ataque DDoS estas también muestran el pico. Ya que las peticiones al servidor DNS requiere de una descarga de datos que es superior a la soportada por el protocolo UDP.
+ <p>
+          <p class="mb-5"> Tras el uso del modelo kmeans de clusterización se observa que cuanto más complejo sea el problema (más variables a clusterizar) más clusters necesitará el modelo para poder identificar el ataque DDoS en uno de los clusters de forma aislada. Por tanto, de cara a la simplificación y eficiencia a la hora de conseguir dicho objetivo, es interesante usar solo variables que muestren el pico del ataque al servidor DNS. Ya que, en este caso, se reduce el número de clusters necesarios para identificarlo de 11 a 3.
+
+Otras de las cosas que se han sacado claras tras este breve estudio con modelos de clusterizacion es la importancia de escalar lo datos, ya que estos modelos usan algoritmos que incluyen cálculos de distancias de los centroides a las distintas instancias que forman los datos, para decidir si pertence a un cluster u otro. Por tanto, estas variables tienen que estar en el mismo rango de valores si queremos identificar patrones. Ya que en estos casos los valores en sí pierden relevancia.
+<p>
+          <p class="mb-5"> Como se ha visto, no es trivial predecir un ataque DDoS ya que dada su naturaleza no hay indicios antes de producirse. Los modelos ARIMA probados arrojan resultados que dan una ligera idea de que la serie puede crecer algo antes de producirse el ataque pero está muy lejos de poder predecirlo. Esto corrobora que dicho pico es una situación anómala, pudiendo ser usado esta tecncia para confirmar que se trata de un ataque DDoS pero a posteriori.
+
+Tras usar varios modelos, se ha visto que, aun tratandose apriori de una serie con estacionalidad, el mejor modelo ha sido el ARIMA (2, 1, 1). Usando como criterio para tal afirmación la gráficas que muestran, en el caso de dicho modelo, la tendencia de la serie en la zona en cuestión. Los demás modelos no mostraban una tendencia tan pronunciada. El método llevado a cabo confirma que, al fin y al cabo, la mejor determinación de la naturaleza de la serie temporal es el uso del modelo ARIMA, al menos en este caso, resultando finalmente un modelo no estacionario el mejor para ajustarse a la serie. 
+ <p>
         </div>
       </section>
 
